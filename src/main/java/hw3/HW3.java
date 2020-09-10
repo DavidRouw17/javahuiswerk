@@ -1,5 +1,7 @@
 package hw3;
 
+import java.awt.*;
+
 public class HW3 {
     public static void main(String[] args) {
         //hw3_1();
@@ -31,10 +33,12 @@ public class HW3 {
         System.out.println(a + b);
     }
 
-    public static void hw3_4(int tijdNu, int urenLater){
+    public static int[] hw3_4(int tijdNu, int urenLater){
         int dagenLater = (urenLater + tijdNu) /24;
         int tijdLater = (tijdNu + urenLater) % 24;
-        System.out.println("De tijd is nu: " + tijdLater + " uur, en er zijn " + dagenLater + " dagen verstreken.");
+        int[] x = {dagenLater, tijdLater};
+        //System.out.println("De tijd is nu: " + tijdLater + " uur, en er zijn " + dagenLater + " dagen verstreken.");
+        return x;
     }
 
     /*
