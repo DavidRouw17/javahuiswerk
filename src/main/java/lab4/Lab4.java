@@ -29,9 +29,9 @@ public class Lab4 {
                     try {
                         bankAccountNumberList.add(Integer.parseInt(stringLetter));
                     }
-                    catch(NumberFormatException e){
+                    catch(NumberFormatException e){ //error als je een string probeert te converteren
                         System.out.println("Added one or more invalid characters.");
-                        bankAccountNumberList.add(-1);
+                        bankAccountNumberList.add(-1); //voor de (in ieder geval bijna) zekerheid dat het niet werkt
                         break;
                     }
                 }
