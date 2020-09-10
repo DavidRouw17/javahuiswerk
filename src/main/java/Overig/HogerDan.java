@@ -1,3 +1,5 @@
+package Overig;
+
 public class HogerDan {
     /**
      * Dit programma bepaalt of iets hoger is dan tien
