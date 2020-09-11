@@ -1,6 +1,6 @@
 package Overig;
 
-import Overig.HogerDan;
+import LabsEnHwOpdrachten.Overig.HogerDan;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;

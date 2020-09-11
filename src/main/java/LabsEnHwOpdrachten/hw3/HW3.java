@@ -1,6 +1,4 @@
-package hw3;
-
-import java.awt.*;
+package LabsEnHwOpdrachten.hw3;
 
 public class HW3 {
     public static void main(String[] args) {

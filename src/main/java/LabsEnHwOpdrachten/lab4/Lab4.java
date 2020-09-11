@@ -1,4 +1,4 @@
-package lab4;
+package LabsEnHwOpdrachten.lab4;
 
 import java.util.ArrayList;
 import java.util.Scanner;

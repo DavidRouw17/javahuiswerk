@@ -1,4 +1,4 @@
-package hw3;
+package LabsEnHwOpdrachten.hw3;
 
 public class Client {
     public String name;

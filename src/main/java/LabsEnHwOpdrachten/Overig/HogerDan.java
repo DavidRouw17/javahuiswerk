@@ -1,4 +1,4 @@
-package Overig;
+package LabsEnHwOpdrachten.Overig;
 
 public class HogerDan {
     /**

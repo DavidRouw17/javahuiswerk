@@ -1,4 +1,4 @@
-package hw4;
+package LabsEnHwOpdrachten.hw4;
 
 public class HW4 {
     public static void main(String[] args) {

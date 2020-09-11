@@ -1,5 +1,6 @@
-package hw3;
+package LabsEnHwOpdrachten.hw_3;
 
+import LabsEnHwOpdrachten.hw3.HW3;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
