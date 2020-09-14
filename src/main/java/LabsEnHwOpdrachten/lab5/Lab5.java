@@ -7,7 +7,7 @@ public class Lab5 {
         Lab5 a = new Lab5();
         int bigNum = a.greatest(list);
         System.out.println(bigNum);
-        int fact = a.factorial(4);
+        int fact = a.factorial(-9);
         System.out.println("Factorial is: " + fact);
     }
 
@@ -39,11 +39,12 @@ public class Lab5 {
         return biggest;
     }
 
-    public int factorial(int n){
-        int result = 1;
-        if (n!=1){
-            result += n * n-1;
-            //nog even naar kijken
+    public int factorial(int n) {
+        int result;
+        if (n > 1) {
+            result = n * factorial(n - 1);
+        } else {
+            result = 1;
         }
 
         return result;
