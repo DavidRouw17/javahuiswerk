@@ -13,6 +13,7 @@ public class HW3 {
         int i = 1;
         int x = i++; //x zal 1 zijn, i 2
         System.out.println("x is " + x + " en i is " + i );
+
         x = ++i; //x en i nu 3
         System.out.println("x is " + x + " en i is " + i );
     }
@@ -57,7 +58,7 @@ public class HW3 {
         client2.name = "Joris";
 
         System.out.println(client1);
-
+        Integer ha = new Integer("12");
     }
 
 }
