@@ -44,7 +44,7 @@ public class Lab4 {
         return bankAccountNumberList;
     }
 
-        public static void bankNumberValidator(ArrayList<Integer> numList){
+        public static String bankNumberValidator(ArrayList<Integer> numList){
         int sum = 0;
         int multiplier = 1;
         for (int i = 0; i<numList.size();i++){
@@ -52,10 +52,10 @@ public class Lab4 {
             multiplier++;
         }
         if (sum % 15 == 0){
-            System.out.println("Probably a real bank account.");
+            return "Probably a real bank account.";
         }
         else {
-            System.out.println("Probably not a real bank account..");
+            return "Probably not a real bank account.";
         }
         }
 }

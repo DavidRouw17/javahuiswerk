@@ -3,11 +3,11 @@ package LabsEnHwOpdrachten.lab5;
 public class Lab5 {
 
     public static void main(String[] args) {
-        int[] list = {-2, -3, -1};
+//        int[] list = {-2, -3, -1};
         Lab5 a = new Lab5();
-        int bigNum = a.greatest(list);
-        System.out.println(bigNum);
-        int fact = a.factorial(-9);
+//        int bigNum = a.greatest(list);
+//        System.out.println(bigNum);
+        int fact = a.factorial(0);
         System.out.println("Factorial is: " + fact);
     }
 
@@ -43,7 +43,8 @@ public class Lab5 {
         int result;
         if (n > 1) {
             result = n * factorial(n - 1);
-        } else {
+        }
+        else {
             result = 1;
         }
 
