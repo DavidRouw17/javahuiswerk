@@ -3,10 +3,7 @@ package LabsEnHwOpdrachten.lab5;
 public class Lab5 {
 
     public static void main(String[] args) {
-//        int[] list = {-2, -3, -1};
         Lab5 a = new Lab5();
-//        int bigNum = a.greatest(list);
-//        System.out.println(bigNum);
         int fact = a.factorial(0);
         System.out.println("Factorial is: " + fact);
     }
@@ -29,7 +26,7 @@ public class Lab5 {
 
     }
 
-    public int greatest(int[] intList) {
+    public int greatest(int... intList) {
         Integer biggest = null;
         for (int i = 0; i < intList.length; i++) {
             if (biggest == null || intList[i] > biggest) {

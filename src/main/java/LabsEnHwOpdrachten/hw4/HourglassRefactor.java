@@ -20,7 +20,7 @@ public class HourglassRefactor {
             }
             hourGlassCreator(intNum);
         } catch (EvenNumberException e) {
-            System.out.println("Geen oneven nummer gegeven, probeer nog eens!" + "\n");
+            System.out.println(e.getMessage() + "\n");
             hourGlass();
         } catch (NumberFormatException e) {
             System.out.println("Dat is geen nummer, probeer nog eens!" + "\n");
@@ -29,6 +29,11 @@ public class HourglassRefactor {
 
     }
 
+    /**
+     * programma dat met sterren een holle zandloper maakt, afhankelijk van a
+     * @param a hoeveel rijen aan zandloper je wilt
+     * @throws EvenNumberException wanneer er een even nummer gegeven wordt
+     */
     public void hourGlassCreator(int a) throws EvenNumberException {
         if (a % 2 == 0) {
             throw new EvenNumberException(a);
