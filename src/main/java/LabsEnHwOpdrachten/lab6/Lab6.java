@@ -9,7 +9,7 @@ public class Lab6 {
     public static void main(String[] args) {
         Lab6 l = new Lab6();
         //l.calculateFromInput(8);
-        l.randomCube(6);
+        l.randomCube(3);
     }
 
     public int[] calculateFromInput(int numberAmt) {
@@ -36,11 +36,15 @@ public class Lab6 {
 
 
     public void randomCube(int size) {
+        //some initialisors
+
         Random rand = new Random();
         int[][] cube = new int[size][size];
         ArrayList<Integer> numbersUsed = new ArrayList<Integer>();
         int newNumber = 0; //starting value, need to be initialized
         numbersUsed.add(0); //0 can never be in the cube
+
+        //constructing and printing the cube
         for (int rij = 0; rij < size; rij++) {
             for (int kol = 0; kol < size; kol++) {
                 while (numbersUsed.contains(newNumber)){
@@ -48,15 +52,11 @@ public class Lab6 {
                 }
                 cube[rij][kol] = newNumber;
                 numbersUsed.add(newNumber);
-            }
-        }
-
-        //for printing the cube
-        for (int[] row : cube) {
-            for (int num : row) {
-                System.out.printf("%-3s",num);
+                System.out.printf("%-3s",newNumber);
             }
             System.out.println();
         }
-    }
+
+
+     }
 }
