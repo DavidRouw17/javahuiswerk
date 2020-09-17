@@ -4,13 +4,22 @@ public class FiboRecursive {
 
     public static void main(String[] args) {
         FiboRecursive f = new FiboRecursive();
-        int fibo = 9;
+        int fibo = 10;
         for (int i = 1; i <= fibo; i++) {
-            System.out.print(f.run( i) + " ");
+            System.out.print(f.run(5, 10, i) + " ");
         }
+        System.out.println();
+        System.out.println(f.goldenRatio(10));
     }
 
-    int run(int n) {
+    double goldenRatio(int n) {
+        long n1 = run(n);
+        long n2 = run(n - 1);
+
+        return (double) n1 / n2;
+    }
+
+    long run(int n) {
 
 //        if (n <= 2) {
 //            return 1;
@@ -21,7 +30,7 @@ public class FiboRecursive {
 
     }
 
-    int run(int begin, int n) {
+    long run(int begin, int n) {
 //        if (n <= 2) {
 //            return begin;
 //        }
@@ -31,7 +40,7 @@ public class FiboRecursive {
 
     }
 
-    int run(int f1, int f2, int n) {
+    long run(int f1, int f2, int n) {
         if (n == 1) {
             return f1;
         }

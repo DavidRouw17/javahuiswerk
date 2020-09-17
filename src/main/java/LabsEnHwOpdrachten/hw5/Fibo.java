@@ -4,12 +4,12 @@ public class Fibo {
     public static void main(String[] args) {
         Fibo f = new Fibo();
         System.out.println(f.run(4, 6));
-//        int i = 1;
-//        while (f.goldenRatio(i) > 0) {
-//            i += 1;
-//
-//        }
-//        System.out.println(i);
+        int i = 3;
+        while (f.goldenRatio(i) > 0) {
+            i += 1;
+
+        }
+        System.out.println(i);
         // resultaat: bij 93 is het te groot voor long, overschakelen naar bigInt!
     }
 
