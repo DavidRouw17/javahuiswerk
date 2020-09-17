@@ -15,7 +15,7 @@ public class BankAccount {
         this.interest = 0.05;
     }
 
-    public BankAccount(int accNum, double balance) {
+    public BankAccount(int accNum, double balance) throws NegativeBalanceException {
         BigDecimal b = new BigDecimal(balance);
         negBalanceChecker(b);
 
@@ -24,53 +24,36 @@ public class BankAccount {
         this.interest = 0.05;
     }
 
-    private void negBalanceChecker(BigDecimal balance) {
+    private void negBalanceChecker(BigDecimal balance) throws NegativeBalanceException {
         if (balance.doubleValue() < MINIMAL_AMT) {
             throw new NegativeBalanceException(balance);
         }
     }
 
-    public void deposit(double addedMoney) {
-        try {
+    public void deposit(double addedMoney) throws NegativeBalanceException {
             BigDecimal b = new BigDecimal(addedMoney);
             BigDecimal result = balance.add(b);
             negBalanceChecker(result);
             this.balance = result;
-        }
-        catch (NegativeBalanceException e){
-            System.out.println(e.getMessage());
-        }
     }
 
-    public void withdraw(double retrievedMoney) {
-        try {
+    public void withdraw(double retrievedMoney) throws NegativeBalanceException {
             BigDecimal b = new BigDecimal(retrievedMoney);
             BigDecimal result = balance.subtract(b);
             negBalanceChecker(result);
             this.balance = result;
-        }
-        catch (NegativeBalanceException e){
-            System.out.println(e.getMessage());
-        }
     }
 
-    public void transferTo(BankAccount otherAcc, double amt) {
-        try {
+    public void transferTo(BankAccount otherAcc, double amt) throws NegativeBalanceException  {
             this.withdraw(amt);
             otherAcc.deposit(amt);
-        } catch (NegativeBalanceException e) {
-            System.out.println(e.getMessage());
-        }
+
 
     }
 
-    public void transferFrom(BankAccount otherAcc, double amt) {
-        try {
+    public void transferFrom(BankAccount otherAcc, double amt) throws NegativeBalanceException {
             otherAcc.withdraw(amt);
             this.deposit(amt);
-        } catch (NegativeBalanceException e) {
-            System.out.println(e.getMessage());
-        }
     }
 
     public BigDecimal yearInterest() {
@@ -94,7 +77,7 @@ public class BankAccount {
         return balance.setScale(2, BigDecimal.ROUND_DOWN);
     }
 
-    public void setBalance(BigDecimal balance) {
+    public void setBalance(BigDecimal balance) throws NegativeBalanceException {
         negBalanceChecker(balance);
         this.balance = balance;
     }

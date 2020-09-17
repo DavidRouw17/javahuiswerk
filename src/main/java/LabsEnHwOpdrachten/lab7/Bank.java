@@ -37,10 +37,15 @@ public class Bank {
 
     public void addAccount(double balance) {
         accAmt++;
-        BankAccount b = new BankAccount(accAmt, balance);
-        accList.put(accAmt, b);
-        System.out.println("Account opened with accountnumber " + accAmt
-                + ". You have a starting balance of " + balance + " ekkies!");
+        try {
+            BankAccount b = new BankAccount(accAmt, balance);
+            accList.put(accAmt, b);
+            System.out.println("Account opened with accountnumber " + accAmt
+                    + ". You have a starting balance of " + balance + " ekkies!");
+        }
+        catch (NegativeBalanceException e){
+            System.out.println(e.getMessage());
+        }
 
     }
 
@@ -49,6 +54,8 @@ public class Bank {
             validAccountChecker(accountNumber);
             accList.get(accountNumber).deposit(money);
         } catch (NoAccountFoundException e) {
+            System.out.println(e.getMessage());
+        } catch( NegativeBalanceException e){
             System.out.println(e.getMessage());
         }
 
@@ -60,6 +67,8 @@ public class Bank {
             accList.get(accountNumber).withdraw(money);
         } catch (NoAccountFoundException e) {
             System.out.println(e.getMessage());
+        } catch (NegativeBalanceException e){
+            System.out.println(e.getMessage());
         }
     }
 
@@ -69,6 +78,8 @@ public class Bank {
             validAccountChecker(accNumTo);
             accList.get(accNumFrom).transferTo(accList.get(accNumTo), money);
         } catch (NoAccountFoundException e) {
+            System.out.println(e.getMessage());
+        } catch (NegativeBalanceException e){
             System.out.println(e.getMessage());
         }
     }

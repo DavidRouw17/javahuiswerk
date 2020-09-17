@@ -72,6 +72,20 @@ public class BankTest {
     }
 
     @Test
+    public void testIfTransferringMoneyBetween2AccountsWorksWhenAccountFromHasToLittleMoney() {
+        Bank b = new Bank();
+        b.addAccount(500);
+        b.addAccount(200);
+        b.transferMoney(2, 1, 300);
+
+        BigDecimal expectedNewBalanceAccount1 = new BigDecimal(500);
+        expectedNewBalanceAccount1 = expectedNewBalanceAccount1.setScale(2, BigDecimal.ROUND_DOWN);
+
+        assertEquals(expectedNewBalanceAccount1, b.getBalance(1));
+
+    }
+
+    @Test
     public void moneyInTheBank() {
         Bank b = new Bank();
         b.addAccount(500);
