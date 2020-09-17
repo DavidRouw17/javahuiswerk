@@ -1,5 +1,6 @@
 package LabsEnHwOpdrachten.lab7;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 
 public class Bank {
@@ -8,8 +9,7 @@ public class Bank {
     private HashMap<Integer, BankAccount> accList;
 
     public Bank() {
-        accAmt = 0;
-        accList = new HashMap<Integer, BankAccount>();
+        this(0);
     }
 
     public Bank(int newAccounts) {
@@ -82,12 +82,13 @@ public class Bank {
         }
     }
 
-    public double moneyInTheBank() {
-        double money = 0;
+    public BigDecimal moneyInTheBank() {
+        BigDecimal money = new BigDecimal(0);
+        money.setScale(2, BigDecimal.ROUND_DOWN);
         for (int i : accList.keySet()) {
-            money += accList.get(i).getBalance().doubleValue();
+            money = money.add(accList.get(i).getBalance());
         }
-        return money;
+        return money.setScale(2, BigDecimal.ROUND_DOWN);
     }
 
     public void moneyInTheBankPrinter() {
@@ -100,10 +101,24 @@ public class Bank {
         }
     }
 
-    public void interestPrinter(){
-        for (int i : accList.keySet()){
+    public void interestPrinter() {
+        for (int i : accList.keySet()) {
             System.out.println("Account with number " + i + " gets " + accList.get(i).yearInterest() +
                     " interest after a year");
+        }
+    }
+
+    public int getBankSize() {
+        return accAmt;
+    }
+
+    public BigDecimal getBalance(int accNumber) {
+        try {
+            validAccountChecker(accNumber);
+            return accList.get(accNumber).getBalance();
+        } catch (NoAccountFoundException e) {
+            System.out.println(e.getMessage());
+            return new BigDecimal(0);
         }
     }
 }
