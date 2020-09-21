@@ -9,6 +9,10 @@ public class Person {
     public static final int numberOfPossibleGenders = Gender.values().length;
     public static final int MAX_AGE = 130;
 
+    public Person(String name){
+        this.name = name;
+    }
+
     public Person(String name, int age) {
         this.name = name;
         this.age = age;
@@ -39,5 +43,9 @@ public class Person {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String toString(){
+        return "Deze persoon heet " + name;
     }
 }

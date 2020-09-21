@@ -49,6 +49,16 @@ public class Bank {
 
     }
 
+    public BankAccount getAccount(int accountNumber){
+        try {
+            validAccountChecker(accountNumber);
+            return accList.get(accountNumber);
+        } catch (NoAccountFoundException e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
     public void addMoney(int accountNumber, double money) {
         try {
             validAccountChecker(accountNumber);

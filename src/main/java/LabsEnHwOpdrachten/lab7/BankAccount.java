@@ -1,5 +1,7 @@
 package LabsEnHwOpdrachten.lab7;
 
+import LabsEnHwOpdrachten.hw7.Person;
+
 import java.math.BigDecimal;
 
 public class BankAccount {
@@ -7,21 +9,25 @@ public class BankAccount {
     private BigDecimal balance;
     private double interest;
 
+    private Person ownerOfAccount;
+
     public static final int MINIMAL_AMT = 0;
 
-    public BankAccount(int accNum) {
-        this.balance = new BigDecimal(0);
-        this.accNumber = accNum;
-        this.interest = 0.05;
+    public BankAccount(int accNum) throws NegativeBalanceException {
+        this(accNum, 0, 0.05);
     }
 
     public BankAccount(int accNum, double balance) throws NegativeBalanceException {
+        this(accNum, balance, 0.05);
+    }
+
+    public BankAccount(int accNum, double balance, double interest) throws NegativeBalanceException {
         BigDecimal b = new BigDecimal(balance);
         negBalanceChecker(b);
 
         this.balance = b;
         this.accNumber = accNum;
-        this.interest = 0.05;
+        this.interest = interest;
     }
 
     private void negBalanceChecker(BigDecimal balance) throws NegativeBalanceException {
@@ -90,9 +96,19 @@ public class BankAccount {
         this.interest = interest;
     }
 
+    public Person getOwnerOfAccount() {
+        return ownerOfAccount;
+    }
+
+    public void setOwnerOfAccount(Person ownerOfAccount) {
+        this.ownerOfAccount = ownerOfAccount;
+    }
+
     public String toString(){
 
         return ("Accountnumber is: " + accNumber + ", and there are "
                 + balance.setScale(2, BigDecimal.ROUND_DOWN) + " ekkies on the account");
     }
+
+
 }
