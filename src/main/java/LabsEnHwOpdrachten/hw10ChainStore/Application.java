@@ -8,7 +8,6 @@ public class Application {
     public static void main(String[] args) {
         CardDatabase db = new CardDatabase();
         dbFiller(db);
-        db.cardPrinter();
         paymentScanner(db);
         db.cardPrinter();
 
@@ -27,6 +26,7 @@ public class Application {
         db.addRegularCard("Petra", 100500);
         db.addGoldCard("Myrthe", 7000, 10);
         db.addGoldCard("Rob", 100, 5);
+        db.cardPrinter();
     }
 
     //betaling aan de hand van input user
