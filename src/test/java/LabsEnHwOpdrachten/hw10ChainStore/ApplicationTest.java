@@ -31,8 +31,9 @@ public class ApplicationTest {
 
         assertEquals(expected, kaart.getCredit(), 0.0);
     }
+
     @Test
-    public void testIfDiscountWorksProperlyOnGoldCards(){
+    public void testIfDiscountWorksProperlyOnGoldCards() {
         Card kaart = db.getCard(10);
         kaart.pay(1000);
         double expected = 6100;
@@ -41,7 +42,7 @@ public class ApplicationTest {
     }
 
     @Test
-    public void testIfGoldCardCreditCanGetUnderZero(){
+    public void testIfGoldCardCreditCanGetUnderZero() {
         Card kaart = db.getCard(10);
         kaart.pay(10000);
         double expected = -2000;
@@ -50,14 +51,14 @@ public class ApplicationTest {
     }
 
     @Test(expected = OutOfRangeException.class)
-    public void testIfDiscountCantBeMoreThen30(){
+    public void testIfDiscountCantBeMoreThen30() {
         GoldCard kaart = (GoldCard) db.getCard(1);
         kaart.setDiscount(31);
 
     }
 
     @Test(expected = OutOfRangeException.class)
-    public void testIfDiscountCantBeLessThen0(){
+    public void testIfDiscountCantBeLessThen0() {
         GoldCard kaart = (GoldCard) db.getCard(1);
         kaart.setDiscount(-1);
 

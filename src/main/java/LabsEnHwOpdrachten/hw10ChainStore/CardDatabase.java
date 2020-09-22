@@ -36,7 +36,7 @@ public class CardDatabase {
     }
 
     //checken of opgevraagd account bestaat, geeft true of false
-    public boolean accountNumberChecker(int accNumber) {
+    boolean accountNumberChecker(int accNumber) {
         if (accNumber <= 0 || accNumber > cardAmt) {
             return false;
         }
@@ -58,7 +58,8 @@ public class CardDatabase {
             return null;
         }
     }
-
+    //print alle kaarten in de hashmap, en laat de info zien. Maakt ook
+    //onderscheid tussen goldcards en regularcards met instanceOf
     public void cardPrinter() {
         System.out.printf("CardID  Name        Credit  Discount\n");
         for (int i = 1; i <= cardAmt; i++) {

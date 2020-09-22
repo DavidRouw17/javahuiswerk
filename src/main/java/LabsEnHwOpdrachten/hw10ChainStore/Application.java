@@ -1,6 +1,5 @@
 package LabsEnHwOpdrachten.hw10ChainStore;
 
-import java.text.ParseException;
 import java.util.Scanner;
 
 public class Application {
@@ -13,8 +12,9 @@ public class Application {
 
 
     }
+
     //creeren van database voor testdata
-    public static void dbFiller(CardDatabase db){
+    public static void dbFiller(CardDatabase db) {
         db.addGoldCard("Bram", 3000, 20);
         db.addRegularCard("Bart", 1000);
         db.addRegularCard("Hasan", 20000);
@@ -30,7 +30,7 @@ public class Application {
     }
 
     //betaling aan de hand van input user
-    public static void paymentScanner(CardDatabase db){
+    public static void paymentScanner(CardDatabase db) {
         Scanner in = new Scanner(System.in);
         System.out.println("Enter the cardID: ");
         String cCard = in.nextLine();
@@ -41,12 +41,10 @@ public class Application {
                 System.out.println("Enter the amount to pay: ");
                 String payment = in.nextLine();
                 card.pay(Integer.parseInt(payment));
-            }
-            else {
+            } else {
                 System.out.println("Card not found!");
             }
-        }
-        catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             System.out.println(cCard + " is not a valid number, try with integer next time.");
         }
     }
