@@ -8,7 +8,12 @@ public class Application {
         CardDatabase db = new CardDatabase();
         dbFiller(db);
         paymentScanner(db);
-        db.cardPrinter();
+       db.cardPrinter();
+
+//        GoldCard kaartVanBas = (GoldCard) db.getCard(4);
+//        kaartVanBas.setDiscount(10);
+//
+//        db.cardPrinter();
 
 
     }

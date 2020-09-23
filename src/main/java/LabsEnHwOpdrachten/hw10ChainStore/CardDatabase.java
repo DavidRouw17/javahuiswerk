@@ -58,6 +58,7 @@ public class CardDatabase {
             return null;
         }
     }
+
     //print alle kaarten in de hashmap, en laat de info zien. Maakt ook
     //onderscheid tussen goldcards en regularcards met instanceOf
     public void cardPrinter() {
