@@ -11,6 +11,10 @@ public class Android extends Human implements Chargeable {
         return "I'm only half human, but human still... My energy level is " + charge + "%.";
     }
 
+    public String toString(){
+        return "Android has no name or age..";
+    }
+
     public int charge(int amount) {
         if (charge + amount <= 100) {
             this.charge += amount;

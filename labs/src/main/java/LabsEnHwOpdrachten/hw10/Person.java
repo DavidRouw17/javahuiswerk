@@ -28,4 +28,7 @@ public class Person extends Human {
         return "Hello, my name is " + name + ". Nice to meet you!";
     }
 
+    public String toString(){
+        return name + "(" + age + ") is " + gender;
+    }
 }

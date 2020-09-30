@@ -43,6 +43,11 @@ public class Person {
             public String greet() {
                 return "Sub is the best.";
             }
+
+            @Override
+            public String toString() {
+                return "Human from hw11";
+            }
         };
         return human;
     }
